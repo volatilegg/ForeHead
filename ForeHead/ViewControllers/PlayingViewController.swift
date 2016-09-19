@@ -38,6 +38,24 @@ class PlayingViewController: UIViewController {
         wordLabel.text = selectedWord
         
         timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(endGame), userInfo: nil, repeats: false)
+        
+        coreMotionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (data, error) in
+            guard error == nil else {
+                print("\(error.debugDescription)")
+                
+                return
+            }
+            
+            if let data = data {
+                if data.acceleration.screenIsUp {
+                    print("up")
+                } else if data.acceleration.screenIsOn4head {
+                    print("4Head")
+                } else if data.acceleration.screenIsDown {
+                    print("down")
+                }
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,3 +90,4 @@ class PlayingViewController: UIViewController {
 //        performSegue(withIdentifier: segueToResult, sender: nil)
     }
 }
+

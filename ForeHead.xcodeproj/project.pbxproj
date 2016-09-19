@@ -21,6 +21,7 @@
 		E432AA7D1D8EF30A0033B35B /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E432AA751D8EF30A0033B35B /* CategoryTableViewCell.swift */; };
 		E432AA7E1D8EF30A0033B35B /* PlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E432AA761D8EF30A0033B35B /* PlayingViewController.swift */; };
 		E432AA7F1D8EF30A0033B35B /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E432AA771D8EF30A0033B35B /* ResultViewController.swift */; };
+		E432AA811D8F05960033B35B /* CMAccelerationExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E432AA801D8F05960033B35B /* CMAccelerationExtenstion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		E432AA751D8EF30A0033B35B /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		E432AA761D8EF30A0033B35B /* PlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingViewController.swift; sourceTree = "<group>"; };
 		E432AA771D8EF30A0033B35B /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		E432AA801D8F05960033B35B /* CMAccelerationExtenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMAccelerationExtenstion.swift; path = ../Models/CMAccelerationExtenstion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 		E432AA701D8EF30A0033B35B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E432AA801D8F05960033B35B /* CMAccelerationExtenstion.swift */,
 			);
 			name = Utils;
 			path = ForeHead/Utils;
@@ -324,6 +327,7 @@
 				E432AA7B1D8EF30A0033B35B /* CategoryCollectionViewCell.swift in Sources */,
 				E432AA3F1D8EF2C20033B35B /* AppDelegate.swift in Sources */,
 				E432AA7F1D8EF30A0033B35B /* ResultViewController.swift in Sources */,
+				E432AA811D8F05960033B35B /* CMAccelerationExtenstion.swift in Sources */,
 				E432AA7A1D8EF30A0033B35B /* CategoriesViewController.swift in Sources */,
 				E432AA781D8EF30A0033B35B /* Category.swift in Sources */,
 				E432AA7D1D8EF30A0033B35B /* CategoryTableViewCell.swift in Sources */,
