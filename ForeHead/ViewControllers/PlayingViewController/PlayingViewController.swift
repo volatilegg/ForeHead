@@ -24,13 +24,23 @@ class PlayingViewController: UIViewController {
     
     var selectedCategory: Category? {
         didSet {
-            
+            selectedList = selectedCategory?.list
         }
     }
     
-    var selectedWord: String? = "Put phone on your 4Head"
+    var selectedWord: String? = "Put phone on your 4Head" {
+        didSet {
+            wordLabel.text = selectedWord
+        }
+    }
     
     var selectedList: [WordItem]?
+    
+    var currentIndex: Int = 0
+    
+    var gameIsStarted: Bool = false
+    
+    var readyForNextQuestion: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,11 +58,12 @@ class PlayingViewController: UIViewController {
             
             if let data = data {
                 if data.acceleration.screenIsUp {
-                    print("up")
+                    self.answerQuestionWithResult(correct: true)
                 } else if data.acceleration.screenIsOn4head {
-                    print("4Head")
+                    if !self.gameIsStarted { self.startGame() }
+                    self.moveToNextQuestion()
                 } else if data.acceleration.screenIsDown {
-                    print("down")
+                    self.answerQuestionWithResult(correct: false)
                 }
             }
         }
@@ -70,7 +81,39 @@ class PlayingViewController: UIViewController {
     }
     
     private func startGame() {
-        
+        gameIsStarted = true
+    }
+    
+    private func moveToNextQuestion() {
+        if gameIsStarted {
+            showMainView()
+            
+            readyForNextQuestion = false
+            
+            if let selectedList = selectedList {
+                if currentIndex >= selectedList.count {
+                    endGame()
+                } else {
+                    selectedWord = selectedList[currentIndex].word
+                }
+            }
+        }
+    }
+    
+    private func answerQuestionWithResult(correct: Bool) {
+        if let selectedList = selectedList, currentIndex < selectedList.count, gameIsStarted {
+            if correct {
+                showSuccessView()
+            } else {
+                showFailedView()
+            }
+
+            readyForNextQuestion = true
+            
+            self.selectedList?[currentIndex].result = correct ? .Right : .Wrong
+            
+            currentIndex += 1
+        }
     }
     
     private func showFailedView() {
@@ -85,9 +128,18 @@ class PlayingViewController: UIViewController {
         mainView.isHidden = true
     }
     
+    private func showMainView() {
+        failedView.isHidden = true
+        successView.isHidden = true
+        mainView.isHidden = false
+    }
+    
     @objc private func endGame() {
         print("End game")
-//        performSegue(withIdentifier: segueToResult, sender: nil)
+        
+//        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (timer) in
+//            performSegue(withIdentifier: segueToResult, sender: nil)
+//        }
     }
 }
 
