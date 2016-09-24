@@ -62,7 +62,7 @@
 		E432AA751D8EF30A0033B35B /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		E432AA761D8EF30A0033B35B /* PlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingViewController.swift; sourceTree = "<group>"; };
 		E432AA771D8EF30A0033B35B /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		E432AA801D8F05960033B35B /* CMAccelerationExtenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMAccelerationExtenstion.swift; path = ../Models/CMAccelerationExtenstion.swift; sourceTree = "<group>"; };
+		E432AA801D8F05960033B35B /* CMAccelerationExtenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMAccelerationExtenstion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,10 +93,6 @@
 		E432AA321D8EF2C20033B35B = {
 			isa = PBXGroup;
 			children = (
-				E432AA6C1D8EF30A0033B35B /* Models */,
-				E432AA6E1D8EF30A0033B35B /* Services */,
-				E432AA701D8EF30A0033B35B /* Utils */,
-				E432AA711D8EF30A0033B35B /* ViewControllers */,
 				E432AA3D1D8EF2C20033B35B /* ForeHead */,
 				E432AA521D8EF2C20033B35B /* ForeHeadTests */,
 				E432AA5D1D8EF2C20033B35B /* ForeHeadUITests */,
@@ -117,11 +113,15 @@
 		E432AA3D1D8EF2C20033B35B /* ForeHead */ = {
 			isa = PBXGroup;
 			children = (
+				E432AA6C1D8EF30A0033B35B /* Models */,
+				E432AA6E1D8EF30A0033B35B /* Services */,
+				E432AA701D8EF30A0033B35B /* Utils */,
+				E432AA711D8EF30A0033B35B /* ViewControllers */,
 				E432AA3E1D8EF2C20033B35B /* AppDelegate.swift */,
-				E432AA421D8EF2C20033B35B /* Main.storyboard */,
 				E432AA451D8EF2C20033B35B /* Assets.xcassets */,
-				E432AA471D8EF2C20033B35B /* LaunchScreen.storyboard */,
 				E432AA4A1D8EF2C20033B35B /* Info.plist */,
+				E432AA471D8EF2C20033B35B /* LaunchScreen.storyboard */,
+				E432AA421D8EF2C20033B35B /* Main.storyboard */,
 			);
 			path = ForeHead;
 			sourceTree = "<group>";
@@ -149,8 +149,7 @@
 			children = (
 				E432AA6D1D8EF30A0033B35B /* Category.swift */,
 			);
-			name = Models;
-			path = ForeHead/Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E432AA6E1D8EF30A0033B35B /* Services */ = {
@@ -158,8 +157,7 @@
 			children = (
 				E432AA6F1D8EF30A0033B35B /* CategoryService.swift */,
 			);
-			name = Services;
-			path = ForeHead/Services;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		E432AA701D8EF30A0033B35B /* Utils */ = {
@@ -167,22 +165,44 @@
 			children = (
 				E432AA801D8F05960033B35B /* CMAccelerationExtenstion.swift */,
 			);
-			name = Utils;
-			path = ForeHead/Utils;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		E432AA711D8EF30A0033B35B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E4EF934D1D9658C900029B8A /* CategoryViewController */,
+				E4EF934E1D9658E400029B8A /* PlayingViewController */,
+				E4EF934F1D9658F400029B8A /* ResultViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E4EF934D1D9658C900029B8A /* CategoryViewController */ = {
 			isa = PBXGroup;
 			children = (
 				E432AA721D8EF30A0033B35B /* CategoriesViewController.swift */,
 				E432AA731D8EF30A0033B35B /* CategoryCollectionViewCell.swift */,
 				E432AA741D8EF30A0033B35B /* CategoryCollectionViewCell.xib */,
 				E432AA751D8EF30A0033B35B /* CategoryTableViewCell.swift */,
+			);
+			path = CategoryViewController;
+			sourceTree = "<group>";
+		};
+		E4EF934E1D9658E400029B8A /* PlayingViewController */ = {
+			isa = PBXGroup;
+			children = (
 				E432AA761D8EF30A0033B35B /* PlayingViewController.swift */,
+			);
+			path = PlayingViewController;
+			sourceTree = "<group>";
+		};
+		E4EF934F1D9658F400029B8A /* ResultViewController */ = {
+			isa = PBXGroup;
+			children = (
 				E432AA771D8EF30A0033B35B /* ResultViewController.swift */,
 			);
-			name = ViewControllers;
-			path = ForeHead/ViewControllers;
+			path = ResultViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +393,7 @@
 				E432AA431D8EF2C20033B35B /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		E432AA471D8EF2C20033B35B /* LaunchScreen.storyboard */ = {
@@ -381,6 +402,7 @@
 				E432AA481D8EF2C20033B35B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -580,6 +602,7 @@
 				E432AA651D8EF2C20033B35B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E432AA661D8EF2C20033B35B /* Build configuration list for PBXNativeTarget "ForeHeadTests" */ = {
 			isa = XCConfigurationList;
@@ -588,6 +611,7 @@
 				E432AA681D8EF2C20033B35B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E432AA691D8EF2C20033B35B /* Build configuration list for PBXNativeTarget "ForeHeadUITests" */ = {
 			isa = XCConfigurationList;
@@ -596,6 +620,7 @@
 				E432AA6B1D8EF2C20033B35B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
